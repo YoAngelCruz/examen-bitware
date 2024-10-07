@@ -1,0 +1,22 @@
+# Ejemplo de un deployment con 3 replicas
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: practica3-deployment
+  labels:
+    app: practica3
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: practica3
+  template:
+    metadata:
+      labels:
+        app: practica3
+    spec:
+      containers:
+      - name: practica3-container
+        image: yoangelcruz/practica3:1.0
+        ports:
+        - containerPort: 80

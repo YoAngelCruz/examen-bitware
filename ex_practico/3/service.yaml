@@ -1,0 +1,13 @@
+#Ejemplo de un service para el deployment
+apiVersion: v1
+kind: Service
+metadata:
+  name: practica3-service
+spec:
+  selector:
+    app: practica3
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: LoadBalancer
